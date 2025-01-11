@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Submit Codes</title>
+</head>
+<body>
+    <h1>Финален Етап: Въведете всичките 4 части от кода</h1>
+    {% if error %}
+        <p style="color:red;">Някоя от стойностите е грешна. Опитайте пак!</p>
+    {% endif %}
+    <form method="POST">
+        <p>Challenge 1 (URL): <input type="text" name="code1"></p>
+        <p>Challenge 2 (Multi/Caesar): <input type="text" name="code2"></p>
+        <p>Challenge 3 (Image): <input type="text" name="code3"></p>
+        <p>Challenge 4 (Geo): <input type="text" name="code4"></p>
+        <button type="submit">Изпрати</button>
+    </form>
+</body>
+</html>

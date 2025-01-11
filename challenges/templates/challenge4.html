@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Challenge 4 - Geolocation</title>
+</head>
+<body>
+    <h1>Challenge 4: Geolocation</h1>
+    <p>Can you find out where this is?:</p>
+    <img src="{{ url_for('static', filename='GuessTheLocation.png') }}" alt="Landmark" style="max-width:400px;">
+    <p>Успех!</p>
+
+    {% if error %}
+        <p style="color:red;">Inccorect. Try again!</p>
+    {% endif %}
+    <form method="POST">
+        <label>Enter the name of this pace in this format elsys{name_of_place}:</label><br>
+        <input type="text" name="solution" placeholder="LOCATION-ABC-999">
+        <button type="submit">Изпрати</button>
+    </form>
+
+    <h2>Hint</h2>
+    <p>
+        This is where the two symbolic events of our school, have been held the past few years.
+    </p>
+</body>
+</html>

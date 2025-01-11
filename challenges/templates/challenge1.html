@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Challenge 1 - URL Manipulation</title>
+</head>
+<body>
+    <h1>Challenge 1: URL Манипулация</h1>
+    {% if success %}
+        <p><strong>Поздравления!</strong> Успяхте да получите достъп като "admin".</p>
+        <p>Вашият първи частичен код: <b>{{ partial_code }}</b></p>
+        <p><a href="{{ url_for('challenge2') }}">Отидете към Challenge 2</a></p>
+    {% else %}
+        <p><strong>Достъп отказан.</strong> Опитвате се като "guest", но нещо липсва...</p>
+        <p>Подсказка: Вижте URL параметъра <code>?role=???</code>.</p>
+    {% endif %}
+</body>
+</html>

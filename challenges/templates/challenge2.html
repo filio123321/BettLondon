@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Challenge 2 - Multi-encoding + Caesar</title>
+</head>
+<body>
+    <h1>Challenge 2: Многократни кодирания + Шифър на Цезар</h1>
+    <p>Тук ще поставите вашето Base64/Цезар съдържание.</p>
+    <p>Например: <code>YmlwdnB7VGVsX1FscmRlcV92bHJfYWJ6b3ZtcWZrZH0=</code></p>
+
+    {% if error %}
+        <p style="color:red;">Грешно решение. Опитайте отново!</p>
+    {% endif %}
+    <form method="POST">
+        <label>Въведете открития частичен код:</label><br>
+        <input type="text" name="solution" placeholder="MULTI-ENCODING-456">
+        <button type="submit">Изпрати</button>
+    </form>
+</body>
+</html>
