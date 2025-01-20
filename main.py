@@ -54,7 +54,7 @@ def show_challenge_3():
         "After extracting the hidden data, enter the partial code below."
     )
     # Show your puzzle image. If you store it in the same folder, just use its filename:
-    st.image("placeholder-stego.jpg", caption="Example image (replace with real puzzle)")
+    st.image("images/HackTuesTeam.png", caption="Example image (replace with real puzzle)")
 
     user_input = st.text_input("Enter the discovered partial code:", value="")
     if user_input == PARTIAL_CODES["challenge3"]:
@@ -70,7 +70,7 @@ def show_challenge_4():
         "Then enter the partial code below."
     )
     # Show your puzzle image for geolocation:
-    st.image("placeholder-landmark.jpg", caption="Example landmark (replace with real puzzle)")
+    st.image("images/GuessTheLocation.png", caption="Example landmark (replace with real puzzle)")
 
     user_input = st.text_input("Enter the discovered partial code:", value="")
     if user_input == PARTIAL_CODES["challenge4"]:
