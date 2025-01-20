@@ -52,7 +52,7 @@ def show_challenge_3():
         "organized entirely by students for students. Just like hidden data, there's more happening "
         "beneath the surface than you might expect!"
     )
-    st.image("images/HackTuesTeam.png", caption="An image with hidden secrets (replace with the real puzzle)")
+    st.image("images/HackTuesTeam.png", caption="Download this image to find the hidden message.")
 
     user_input = st.text_input("Enter the discovered partial code:", value="")
     if user_input == PARTIAL_CODES["challenge3"]:
