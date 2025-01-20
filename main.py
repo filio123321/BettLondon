@@ -68,7 +68,7 @@ def show_challenge_4():
         "Use your detective skills (or a reverse image search) to figure out the location—"
         "then enter the partial code."
     )
-    st.image("images/GuessTheLocation.png", caption="Where in the world is this? (replace with your puzzle image)")
+    st.image("images/GuessTheLocation.png", caption="What is the name of this place? format the answer in lowercase like so 'name_of_park'.")
 
     user_input = st.text_input("Enter the discovered partial code:", value="")
     if user_input == PARTIAL_CODES["challenge4"]:
