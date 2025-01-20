@@ -1,6 +1,5 @@
 import streamlit as st
 
-# Updated partial codes
 PARTIAL_CODES = {
     "challenge1": "elsys{R0l3s_4r3_FuN}",
     "challenge2": "elsys{Who_Tought_you_decrypting}",
@@ -8,34 +7,31 @@ PARTIAL_CODES = {
     "challenge4": "elsys{sofia_tech_park}"
 }
 
-# String to be decrypted (mentioned in your request):
-# "YmlwdnB7VGVsX1FscmRlcV92bHJfYWJ6b3ZtcWZrZH0"
-# You can incorporate this string into Challenge 2 or wherever appropriate in your puzzle.
-
 def show_challenge_1():
     st.title("Challenge 1: URL Manipulation")
     st.write(
-        "Typically, you would change `?role=guest` to `?role=admin` in the URL, "
-        "but here we simulate that by letting you guess the correct parameter value in a text field."
+        "A suspicious link has been found. There's a parameter called `role` in the URL, "
+        "and rumors say you can elevate your privileges by changing it. "
+        "We’ve simulated that scenario here. Can you figure out which value grants you access?"
     )
     user_input = st.text_input("Enter the `role` value:", value="")
     if user_input.lower() == "admin":
-        st.success("Congratulations! You found the correct 'role'!")
+        st.success("Congratulations! You found the correct role!")
         st.write(f"Your first partial code is: **{PARTIAL_CODES['challenge1']}**")
-        st.write("Proceed to Challenge 2 via the sidebar menu.")
+        st.write("Now head over to Challenge 2 via the sidebar to continue.")
     else:
-        st.warning("Access denied. Hint: consider a higher privilege...")
+        st.warning("Access denied. Hint: Try a higher privilege...")
 
 def show_challenge_2():
     st.title("Challenge 2: Multi-Encoding + Caesar Cipher")
     st.write(
-        "Here you would have some Base64/Caesar-encrypted text. "
-        "Your task is to decode it and enter the final partial code."
+        "You’ve intercepted a strange encoded message. It looks like it might involve Base64 "
+        "or even a Caesar cipher. Your job is to decode it and uncover the secret key."
     )
     st.write(
-        "For instance, you might see something like this: "
-        "`YmlwdnB7VGVsX1FscmRlcV92bHJfYWJ6b3ZtcWZrZH0`, "
-        "which you must decode or decrypt to get the correct code."
+        "For instance, you might come across a cryptic string like:\n"
+        "`YmlwdnB7VGVsX1FscmRlcV92bHJfYWJ6b3ZtcWZrZH0`\n"
+        "Give it your best shot, then enter the final partial code here."
     )
     user_input = st.text_input("Enter the discovered partial code:", value="")
     if user_input == PARTIAL_CODES["challenge2"]:
@@ -46,41 +42,43 @@ def show_challenge_2():
 def show_challenge_3():
     st.title("Challenge 3: Hidden in an Image (Steganography / EXIF)")
     st.write(
-        "Did you know our school ELSYS holds two iconic events each year, "
-        "organized by students for students? They are **HackTues** and **TuesFest**."
+        "Some images contain more than meets the eye. "
+        "In this challenge, there’s an embedded message waiting to be discovered. "
+        "Careful examination (or the right tool) might reveal the secret. "
+        "Once you have it, enter your partial code below."
     )
     st.write(
-        "Here, you have an image with hidden information (EXIF data or steganography). "
-        "After extracting the hidden data, enter the partial code below."
+        "Fun fact: Our school ELSYS hosts two iconic annual events, **HackTues** and **TuesFest**, "
+        "organized entirely by students for students. Just like hidden data, there's more happening "
+        "beneath the surface than you might expect!"
     )
-    # Show your puzzle image. If you store it in the same folder, just use its filename:
-    st.image("images/HackTuesTeam.png", caption="Example image (replace with real puzzle)")
+    st.image("images/HackTuesTeam.png", caption="An image with hidden secrets (replace with the real puzzle)")
 
     user_input = st.text_input("Enter the discovered partial code:", value="")
     if user_input == PARTIAL_CODES["challenge3"]:
-        st.success("Congratulations! You found the hidden info. Proceed to Challenge 4.")
+        st.success("Excellent! You uncovered the hidden info. Proceed to Challenge 4.")
     elif user_input:
         st.error("Incorrect code. Try again!")
 
 def show_challenge_4():
     st.title("Challenge 4: Geolocation")
     st.write(
-        "You receive an image of a slightly unusual landmark. "
-        "Use reverse image search or clues to figure out where it is located. "
-        "Then enter the partial code below."
+        "A mysterious photo shows a landmark. "
+        "Rumor has it that if you can identify this place, you’ll gain access to the final secret. "
+        "Use your detective skills (or a reverse image search) to figure out the location—"
+        "then enter the partial code."
     )
-    # Show your puzzle image for geolocation:
-    st.image("images/GuessTheLocation.png", caption="Example landmark (replace with real puzzle)")
+    st.image("images/GuessTheLocation.png", caption="Where in the world is this? (replace with your puzzle image)")
 
     user_input = st.text_input("Enter the discovered partial code:", value="")
     if user_input == PARTIAL_CODES["challenge4"]:
-        st.success("Excellent! You've found the final code. Go to 'Final Submit' to finish.")
+        st.success("Bravo! You’ve reached the final step. Head to 'Final Submit' to finish.")
     elif user_input:
-        st.error("Incorrect code. Try again!")
+        st.error("Incorrect code. Keep investigating!")
 
 def show_final_submit():
     st.title("Final Stage: Enter All Four Codes")
-    st.write("After completing all challenges, enter the four partial codes here to claim your reward!")
+    st.write("After you’ve conquered every challenge, enter the four partial codes here to claim your reward!")
 
     code1 = st.text_input("Code from Challenge 1")
     code2 = st.text_input("Code from Challenge 2")
