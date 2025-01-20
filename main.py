@@ -94,7 +94,7 @@ def show_final_submit():
         ):
             st.balloons()
             st.success("Congratulations! All codes are correct!")
-            st.write("Show this screen to the organizers to receive your prize.")
+            st.write("Show this screen to the organizers(stand NC50) to receive your prize.")
         else:
             st.error("Some code is incorrect. Please try again.")
 
